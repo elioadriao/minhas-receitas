@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>{{ receita.titulo }}</h2>
+
+    <h4>Ingredientes</h4>
+
+    <ul>
+        {% for ingrediente in receita.ingrediente_set.all %}
+            <li>{{ ingrediente.nome }} - {{ ingrediente.medida }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Etapas de preparo</h4>
+
+    <p>{{ receita.estapas_preparacao }}</p>
+
+{% endblock %}

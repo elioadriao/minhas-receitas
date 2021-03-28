@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row">
+        {% for receita in receitas %}
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ receita.titulo }}</h5>
+                        <p class="card-text">{{ receita.get_nivel_dificuldade_display }} - {{ receita.get_tipo_refeicao_display }}</p>
+                        <a href="{% url 'receitas:detalhes' receita.id %}" class="btn btn-primary">Ver receita</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
